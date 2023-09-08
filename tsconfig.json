@@ -1,7 +1,21 @@
 {
-    "extends": "./tsconfig-esm.json",
     "compilerOptions": {
-      "rootDir": ".",
+        "module": "es6",
+        "moduleResolution": "node",
+        "target": "es6",
+        "lib": ["dom", "ESNext"],
+        "sourceMap": true,
+        "declaration": true,
+        "strict": true,
+        "jsx": "react-jsx",
+        "jsxImportSource": "@emotion/react",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "rootDir": "./src",
+        "outDir": "dist/esm",
+        "declarationDir": "dist/declaration",
+        "types": ["@emotion/react/types/css-prop", "jest"]
     },
-    "include": ["src", "demo"],
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"],
 }

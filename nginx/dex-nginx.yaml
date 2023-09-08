@@ -1,0 +1,4 @@
+name: prosemirror-editor
+mappings:
+  - prefix: prosemirror-editor
+    port: 7497

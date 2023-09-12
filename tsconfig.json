@@ -8,13 +8,13 @@
         "declaration": true,
         "strict": true,
         "jsx": "react-jsx",
-        "jsxImportSource": "@emotion/react",
+        "jsxImportSource": "preact",
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
         "rootDir": "./src",
         "outDir": "dist/esm",
         "declarationDir": "dist/declaration",
-        "types": ["@emotion/react/types/css-prop", "jest"]
+        "types": ["jest"]
     },
     "include": ["src/**/*"],
     "exclude": ["node_modules"],

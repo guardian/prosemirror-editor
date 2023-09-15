@@ -64,19 +64,19 @@ const wrapListItem = (schema: Schema) => (nodeType: NodeType, options: Partial<M
 export const buildMenuItems = (schema: Schema) => {
   const markMenu: MenuElement[] = [];
   if (schema.marks.strong){
-    markMenu.push(markItem(schema.marks.strong, {title: 'Bold', label: "format_bold" }));
+    markMenu.push(markItem(schema.marks.strong, {title: 'Bold', label: "Bold" }));
   }
   if (schema.marks.em){
-    markMenu.push(markItem(schema.marks.em, {title: 'Italic', label: "format_italic" }));
+    markMenu.push(markItem(schema.marks.em, {title: 'Italic', label: "Italic" }));
   }
   if (schema.marks.link){
-    markMenu.push(linkItem(schema.marks.link, {title: 'Link', label: "link" }));
-    markMenu.push(unlinkItem(schema.marks.link, {title: 'Unlink', label: "link_off" }));
+    markMenu.push(linkItem(schema.marks.link, {title: 'Link', label: "Link" }));
+    markMenu.push(unlinkItem(schema.marks.link, {title: 'Unlink', label: "Unlink" }));
   }
   if (schema.nodes.bullet_list && schema.nodes.list_item){
     markMenu.push(wrapListItem(schema)(schema.nodes.bullet_list, {
       title: "Bullet list",
-      label: "format_list_bulleted",
+      label: "Bullet List",
       enable: () => true
     }));
   }

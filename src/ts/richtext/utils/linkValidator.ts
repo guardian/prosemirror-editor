@@ -1,5 +1,12 @@
 import { isUri } from 'valid-url';
 
+type LinkStatus = {
+  valid: boolean,
+  message?: string,
+  link?: string,
+  isEmpty?: boolean
+}
+
 const FUZZY_MATCHERS = [
   {
     // For emails we just look for a `@` symbol as it is easier.
@@ -61,9 +68,9 @@ const isEdToolsDomain = (rawLink: string) => {
   );
 };
 
-export const linkValidator = (rawLink: string) => {
+export const linkValidator = (rawLink: string): LinkStatus => {
   if (!rawLink){
-    return {valid: false, message: "Empty URL provided", link: rawLink};
+    return {valid: false, message: "Empty URL provided", link: rawLink, isEmpty: true};
   }
   if (isEdToolsDomain(rawLink)) {
     return {

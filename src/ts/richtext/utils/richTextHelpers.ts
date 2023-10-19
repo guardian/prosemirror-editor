@@ -30,3 +30,15 @@ export const isTooLong = (value: string, maxWordLength: number): boolean => {
     wordLength > maxWordLength
   );
 };
+
+export const transformToLegacyMarkup = (str: string): string => {
+  const replacements = [
+    { from: "<strong>", to: "<b>"},
+    { from: "</strong>", to: "</b>"},
+    { from: "<em>", to: "<i>"},
+    { from: "</em>", to: "</i>"}
+  ]
+  let newString = str;
+  replacements.forEach(replacement => newString = newString.replaceAll(replacement.from, replacement.to))
+  return newString
+}

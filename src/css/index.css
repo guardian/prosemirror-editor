@@ -89,6 +89,15 @@
     background-color: #ededed;
 }
 
+.ProseMirror a {
+    color: #005689;
+    text-decoration: underline;
+}
+
+.ProseMirror em {
+    font-style: oblique;
+}
+
 .form__message__text--error {
     color: #a31818;
 }

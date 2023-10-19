@@ -32,19 +32,23 @@ export const markActive = (state: EditorState, markType: MarkType) => {
 export const linkItemCommand = (markType: MarkType, customPrompt?: string, defaultValue?: string): Command => (
   state: EditorState,
   dispatch?: (tr: Transaction) => void 
-) => {
+)=> {
   const maybeUrlResult = promptForLink(state, markType, customPrompt, defaultValue);
 
   if (maybeUrlResult && maybeUrlResult.from !== undefined && maybeUrlResult.to !== undefined) {
     const { from, to, url } = maybeUrlResult;
-    const { valid, message, link } = linkValidator(url);
+    const { valid, message, link, isEmpty } = linkValidator(url);
     if (valid) {
       const parsedUrl = parseURL(url);
-      if (dispatch){ dispatch(
-        state.tr.addMark(from, to, markType.create({ href: parsedUrl }))
-      );
+      if (dispatch){ 
+        dispatch(
+          state.tr.addMark(from, to, markType.create({ href: parsedUrl }))
+        );
       }
-    } else {
+    } else if (isEmpty) {
+      dispatch
+    }
+    else {
       return linkItemCommand(markType, `${message} - please check your link and try again.`, link)(state, dispatch);
     }
   }

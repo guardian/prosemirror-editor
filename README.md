@@ -30,3 +30,14 @@ The interface of `RichTextEditor` currently expects:
   shouldAcceptCopiedText: boolean; // Whether the editor should programmatic text replacmement from another rich text field
 }
 ```
+
+## Things this repo doesn't have, that we will want to add in future PRs:
+
+- A means of testing changes from this package itself, for example a demo-app that includes the React editor component. Currently this package only builds a component to be used by other packages.
+- A means of deploying to an npm package.
+
+Currently, vanilla css styles are included in the built dist and need to be imported in the target package.
+
+## How to run
+- Publish this package locally using yarn yalc from the root of the project
+- Import into another project using `yalc`

@@ -6,8 +6,8 @@ export type EditorConfig = {
   allowedMarks: string[];
 };
 
-type FlatTextMark = "strong" | "strike" | "em";
 type FlatTextNode = "text" | "hard_break";
+type FlatTextMark = "strong" | "strike" | "em";
 type FlatTextConfig = {
   allowedNodes: FlatTextNode[];
   allowedMarks: FlatTextMark[];

@@ -39,16 +39,14 @@ export const RichTextEditor = ({ value, onUpdate, config, label, shouldAcceptCop
 
   useEffect(() => {
     const shouldUpdateFromIncomingValue = value !== localValue;
-    if (!editorView || !shouldAcceptCopiedText || !shouldUpdateFromIncomingValue) {
-      return;
+    if (editorView && shouldAcceptCopiedText && shouldUpdateFromIncomingValue) {
+      // Clear the current document
+      const selectAll = editorView.state.tr.setSelection(new AllSelection(editorView.state.doc));
+      editorView.dispatch(selectAll);
+
+      const valueWithParagraphsAsHardBreaks = paragraphToWhitespace(value);
+      editorView.pasteHTML(valueWithParagraphsAsHardBreaks);
     }
-
-    // Clear the current document
-    const selectAll = editorView.state.tr.setSelection(new AllSelection(editorView.state.doc));
-    editorView.dispatch(selectAll);
-
-    const valueWithParagraphsAsHardBreaks = paragraphToWhitespace(value);
-    editorView.pasteHTML(valueWithParagraphsAsHardBreaks);
   }, [value]);
 
   return (

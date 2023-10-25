@@ -47,9 +47,7 @@ export const createEditorView = (
         // to format the outputHtml as an html string rather than a document fragment, we are creating a temporary div, adding it as a child, then using innerHTML which returns an html string
         const tmp = document.createElement('div');
         tmp.appendChild(outputHtml);
-        if (onChange) {
-          onChange(tmp.innerHTML);
-        }
+        onChange(tmp.innerHTML);
       }
     }
   });

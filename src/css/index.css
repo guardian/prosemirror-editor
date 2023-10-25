@@ -1,0 +1,103 @@
+.prosemirror__input {
+    margin-top: 5px;
+    background-color: white;
+    border: 1px solid #dcdcdc;
+}
+
+.ProseMirror {
+    font-size: 13px;
+    line-height: 18px;
+    padding: 10px;
+}
+
+
+.ProseMirror p {
+    margin: 0px
+}
+
+.ProseMirror-menubar {
+    position: relative;
+
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.ProseMirror-menuitem {
+    font-size: 13px;
+    line-height: 18px;
+    display: inline-block;
+
+    cursor: pointer;
+
+    border-right: 1px solid #dcdcdc;
+}
+
+.ProseMirror-menuitem div {
+    width: 100%;
+    height: 100%;
+    padding: calc(10px / 2) 10px;
+}
+
+.ProseMirror-menu-disabled {
+    opacity: .3;
+}
+
+.ProseMirror-menu-submenu-wrap:hover .ProseMirror-menu-submenu, .ProseMirror-menu-submenu-wrap-active .ProseMirror-menu-submenu {
+    display: block;
+}
+
+.ProseMirror-icon {
+    display: inline-block;
+    line-height: .8;
+    vertical-align: -2px;
+    padding: 2px 8px;
+    cursor: pointer;
+}
+
+.ProseMirror-menu-disabled.ProseMirror-icon {
+    cursor: default;
+}
+
+.ProseMirror-icon svg {
+    fill: currentColor;
+    height: 1em;
+}
+
+.ProseMirror-icon span {
+    vertical-align: text-top;
+}
+
+.prosemirror__input {
+    width: 100%;
+}
+
+.ProseMirror-menubar {
+    display: flex;
+    flex-direction: row;
+}
+
+.prosemirror__iconBox:hover {
+    cursor: pointer;
+}
+
+.prosemirror__iconBox:hover svg {
+    fill: #ffbc01;
+}
+
+
+.ProseMirror-menu-active {
+    background-color: #ededed;
+}
+
+.ProseMirror a {
+    color: #005689;
+    text-decoration: underline;
+}
+
+.ProseMirror em {
+    font-style: oblique;
+}
+
+.form__message__text--error {
+    color: #a31818;
+}

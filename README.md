@@ -6,14 +6,14 @@ This project is intended to provide a re-usable ProseMirror editor for use acros
 It is also designed to meet the features required by the rich text editor in [media-atom-maker](https://github.com/guardian/media-atom-maker/blob/3391bfd82ad27848dc9e06a08628320ce481006e/public/video-ui/src/components/FormFields/RichTextEditor.tsx#L2).
 
 It aims to provide:
-- A `RichTextEditor` serialising to one-to-many <p> tags containing the markip below - supporting only the requirements of the above editors, at least until we have further use cases. Specifically, from the first three editors:
+- A `RichTextEditor` serialising to one-to-many `<p>` tags containing the markup below - supporting only the requirements of the above editors, at least until we have further use cases. Specifically, from the first three editors:
   - bold (strong) markup
   - italic (em) markup
   - links
   - unlinking
   - strikethrough
   - superscript and subscript
-  `media-atom-maker` adds some more requirements:
+- `media-atom-maker` adds some more requirements:
   - bullet-list
   - a 'flat' text editor used for trail text, serialising text as a single paragraph with <br> tags providing line breaks.
   - an editor that can be 'copied into' from another editor, e.g. duplicating standfirst to trail text in `media-atom-maker`

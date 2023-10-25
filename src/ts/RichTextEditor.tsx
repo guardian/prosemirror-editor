@@ -12,7 +12,7 @@ interface RichTextEditorProps {
   onUpdate: (str: string) => void;
   config: EditorConfig;
   label?: string;
-  shouldAcceptCopiedText: boolean;
+  shouldAcceptCopiedText?: boolean;
 }
 
 export const RichTextEditor = ({ value, onUpdate, config, label, shouldAcceptCopiedText = false }: RichTextEditorProps) => {

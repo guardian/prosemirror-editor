@@ -8,29 +8,6 @@ export const paragraphToWhitespace = (string: string): string => {
   return string;
 };
 
-export const getWords = (text: string): string[] => {
-  if (!text) {
-    return [];
-  }
-
-  return text
-    .trim()
-    .replace(/<(?:.|\n)*?>/gm, '')
-    .replace(/[^(\w| )]/g, '')
-    .split(/\s+/)
-    .filter(_ => _.length !== 0);
-};
-
-export const isTooLong = (value: string, maxWordLength: number): boolean => {
-  const wordLength = getWords(value).reduce((length, word) => {
-    length += word.length;
-    return length;
-  }, 0);
-  return (
-    wordLength > maxWordLength
-  );
-};
-
 export const transformToLegacyMarkup = (str: string): string => {
   const replacements = [
     { from: "<strong>", to: "<b>"},

@@ -14,7 +14,7 @@
   "scripts": {
     "watch": "run-p watch:*",
     "build": "vite build && tsc -p tsconfig.declaration.json",
-    "test": "jest --env=jsdom --runInBand",
+    "test": "jest --env=jsdom --runInBand --passWithNoTests",
     "test:watch": "jest --env=jsdom --watch --runInBand",
     "format": "prettier --write './src/**/*.ts'",
     "yalc": "yarn build && yalc push",
@@ -45,6 +45,7 @@
     "@vitejs/plugin-react": "4.0.4",
     "eslint": "7",
     "jest": "29.6.4",
+    "jest-environment-jsdom": "29.7.0",
     "preact": "10.17.1",
     "react": "16.14.0",
     "react-dom": "16.14.0",

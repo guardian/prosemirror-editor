@@ -2,7 +2,6 @@ import OrderedMap from "orderedmap";
 import { MarkSpec, NodeSpec, Schema } from "prosemirror-model";
 import { schema } from "prosemirror-schema-basic";
 import { addListNodes } from "prosemirror-schema-list";
-import _ from 'lodash';
 import { EditorConfig } from "./config";
 
 const BaseInlineEditorNodeSpec = OrderedMap.from<NodeSpec>({

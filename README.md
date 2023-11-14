@@ -5,6 +5,7 @@ This project is intended to provide a re-usable ProseMirror editor for use acros
   - [tagmanager](https://github.com/guardian/tagmanager/blob/c751b1f0da6d61a6e7bd3c6cb43ceddcd743fd9c/public/components/utils/ReactScribe.react.js#L8)
   - [atom-workshop](https://github.com/guardian/atom-workshop/blob/811f99c5ea04d6b55cbddb5dc5c08d0165f23fa8/public/js/components/FormFields/FormFieldScribeEditor.js#L11)
   - [targeting](https://github.com/guardian/targeting/blob/main/public/components/utils/ReactScribe.js)
+
 It is also designed to meet the features required by the rich text editor in [media-atom-maker](https://github.com/guardian/media-atom-maker/blob/3391bfd82ad27848dc9e06a08628320ce481006e/public/video-ui/src/components/FormFields/RichTextEditor.tsx#L2).
 
 It aims to provide:

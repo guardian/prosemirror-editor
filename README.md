@@ -1,4 +1,6 @@
 # prosemirror-editor
+[View package on npm](https://www.npmjs.com/package/@guardian/prosemirror-typerighter).
+
 This project is intended to provide a re-usable ProseMirror editor for use across our tools. Up front, it aims to replace Scribe-based rich text editors with a React-based prosemirror editor in:
   - [tagmanager](https://github.com/guardian/tagmanager/blob/c751b1f0da6d61a6e7bd3c6cb43ceddcd743fd9c/public/components/utils/ReactScribe.react.js#L8)
   - [atom-workshop](https://github.com/guardian/atom-workshop/blob/811f99c5ea04d6b55cbddb5dc5c08d0165f23fa8/public/js/components/FormFields/FormFieldScribeEditor.js#L11)
@@ -34,10 +36,19 @@ The interface of `RichTextEditor` currently expects:
 ## Things this repo doesn't have, that we will want to add in future PRs:
 
 - A means of testing changes from this package itself, for example a demo-app that includes the React editor component. Currently this package only builds a component to be used by other packages.
-- A means of deploying to an npm package.
 
 Currently, vanilla css styles are included in the built dist and need to be imported in the target package.
 
 ## How to run
 - Publish this package locally using yarn yalc from the root of the project
 - Import into another project using `yalc`
+
+## Deploying
+This package is deployed to npm when branches are deployed to `main`, provided the branch name conforms to [conventional commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/).
+
+Most importantly, a PR name starting with:
+- `feat!:` with a commit message starting `BREAKING CHANGE:` will trigger a major version
+- `feat:` will release a major version
+- `fix:` will release a patch version
+
+Deployment is managed by a GitHub Action defined in `.github/workflows`

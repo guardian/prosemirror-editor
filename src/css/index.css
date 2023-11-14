@@ -10,6 +10,10 @@
     padding: 10px;
 }
 
+.ProseMirror[contenteditable="false"]{
+    background-color: #f6f6f6;
+    cursor: not-allowed
+}
 
 .ProseMirror p {
     margin: 0px

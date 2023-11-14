@@ -16,7 +16,7 @@ interface RichTextEditorProps {
   disabled: boolean;
 }
 
-export const RichTextEditor = ({ value, onUpdate, config, label, shouldAcceptCopiedText = false, disabled }: RichTextEditorProps) => {
+export const RichTextEditor = ({ value, onUpdate, config, label, shouldAcceptCopiedText = false, disabled = false }: RichTextEditorProps) => {
   const schema = createSchema(config);
 
   const editorEl = useRef<HTMLDivElement>(null);

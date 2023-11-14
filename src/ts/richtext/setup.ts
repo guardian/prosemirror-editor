@@ -25,7 +25,8 @@ export const createEditorView = (
   editorEl: RefObject<HTMLDivElement>,
   contentEl: HTMLDivElement,
   schema: Schema,
-  config: EditorConfig
+  config: EditorConfig,
+  disabled: boolean
 ) => {
   if (!editorEl.current) {
     return;
@@ -49,7 +50,10 @@ export const createEditorView = (
         tmp.appendChild(outputHtml);
         onChange(tmp.innerHTML);
       }
-    }
+    },
+    editable: () => {
+      return !disabled;
+    },
   });
   return ed;
 };

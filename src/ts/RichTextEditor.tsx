@@ -13,9 +13,10 @@ interface RichTextEditorProps {
   config: EditorConfig;
   label?: string;
   shouldAcceptCopiedText?: boolean;
+  disabled: boolean;
 }
 
-export const RichTextEditor = ({ value, onUpdate, config, label, shouldAcceptCopiedText = false }: RichTextEditorProps) => {
+export const RichTextEditor = ({ value, onUpdate, config, label, shouldAcceptCopiedText = false, disabled }: RichTextEditorProps) => {
   const schema = createSchema(config);
 
   const editorEl = useRef<HTMLDivElement>(null);
@@ -33,7 +34,7 @@ export const RichTextEditor = ({ value, onUpdate, config, label, shouldAcceptCop
     // Editor view takes an HTML Node therefore this string value needs to be converted into a node by placing in a div
     const contentNode = document.createElement('div');
     contentNode.innerHTML = value;
-    const edView = createEditorView(localOnUpdate, editorEl, contentNode, schema, config);
+    const edView = createEditorView(localOnUpdate, editorEl, contentNode, schema, config, disabled);
     setEditorView(edView);
   }, []);
 

@@ -10,14 +10,14 @@ import { buildMenuItems } from './menu';
 import { baseKeymap } from 'prosemirror-commands';
 import { EditorConfig } from './config';
 
-const createBasePlugins = (schema: Schema, config: EditorConfig) => {
+const createBasePlugins = (schema: Schema, config: EditorConfig, disabled: boolean) => {
   const plugins = [
     keymap(buildKeymap(schema, {}, {}, config)),
     keymap(baseKeymap),
     history({ depth: 100, newGroupDelay: 500 }),
     menuBar({content: buildMenuItems(schema)})
   ];
-  return plugins;
+  return disabled ? [] : plugins;
 };
 
 export const createEditorView = (
@@ -25,7 +25,8 @@ export const createEditorView = (
   editorEl: RefObject<HTMLDivElement>,
   contentEl: HTMLDivElement,
   schema: Schema,
-  config: EditorConfig
+  config: EditorConfig,
+  disabled: boolean
 ) => {
   if (!editorEl.current) {
     return;
@@ -35,7 +36,7 @@ export const createEditorView = (
       doc: DOMParser.fromSchema(schema).parse(contentEl, {
         preserveWhitespace: true
       }),
-      plugins: createBasePlugins(schema, config)
+      plugins: createBasePlugins(schema, config, disabled)
     }),
     dispatchTransaction: (transaction: Transaction) => {
       const { state, transactions } = ed.state.applyTransaction(transaction);
@@ -49,7 +50,10 @@ export const createEditorView = (
         tmp.appendChild(outputHtml);
         onChange(tmp.innerHTML);
       }
-    }
+    },
+    editable: () => {
+      return !disabled;
+    },
   });
   return ed;
 };

@@ -1,6 +1,6 @@
 {
   "name": "@guardian/prosemirror-editor",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Providing implementations of ProseMirror for use the Guardian's tools.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",

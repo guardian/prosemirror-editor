@@ -30,7 +30,7 @@ The interface of `RichTextEditor` currently expects:
   onUpdate: (str: string) => void; // A function to call with updated text on update
   config: EditorConfig; // The config for the editor, specifying supported markup, and whether the editor is multi-paragraph or 'flat'
   label?: string; // A label for the editor
-  shouldAcceptCopiedText: boolean; // Whether the editor should programmatic text replacmement from another rich text field
+  shouldAcceptCopiedText: boolean; // Whether the editor should accept programmatic text replacmement from another rich text field
 }
 ```
 

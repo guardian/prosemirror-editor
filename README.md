@@ -45,11 +45,12 @@ Currently, vanilla css styles are included in the built dist and need to be impo
 - Import into another project using `yalc`
 
 ## Deploying
-This package is deployed to npm when branches are deployed to `main`, provided the branch name conforms to [conventional commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/).
+Package releases are managed via [changesets](https://www.npmjs.com/package/changeset).
 
-Most importantly, a PR name starting with:
-- `feat!:` with a commit message starting `BREAKING CHANGE:` will trigger a major version
-- `feat:` will release a major version
-- `fix:` will release a patch version
+To release:
+1. Run `yarn changesets` in the project root locally.
+2. Create a changeset, and include it in a PR.
+3. Merge the PR.
+4. The changesets bot will create a new 'release' PR. Merging that will release the project to NPM.
 
-Deployment is managed by a GitHub Action defined in `.github/workflows`
+Continuous deployment is managed by a GitHub Action defined in `.github/workflows`

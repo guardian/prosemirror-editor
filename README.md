@@ -1,6 +1,8 @@
 # prosemirror-editor
 [View package on npm](https://www.npmjs.com/package/@guardian/prosemirror-typerighter).
 
+![Example editor in tagmanager](https://github.com/user-attachments/assets/9733ba83-2be8-4275-8084-d9787ee57b0b)
+
 This project is intended to provide a re-usable ProseMirror editor for use across our tools. Up front, it aims to replace Scribe-based rich text editors with a React-based prosemirror editor in:
   - [tagmanager](https://github.com/guardian/tagmanager/blob/c751b1f0da6d61a6e7bd3c6cb43ceddcd743fd9c/public/components/utils/ReactScribe.react.js#L8)
   - [atom-workshop](https://github.com/guardian/atom-workshop/blob/811f99c5ea04d6b55cbddb5dc5c08d0165f23fa8/public/js/components/FormFields/FormFieldScribeEditor.js#L11)

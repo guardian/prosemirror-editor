@@ -48,8 +48,8 @@ Currently, vanilla css styles are included in the built dist and need to be impo
 Package releases are managed via [changesets](https://www.npmjs.com/package/changeset).
 
 To release:
-1. Run `yarn changesets` in the project root locally.
-2. Create a changeset, and include it in a PR.
+1. Run `yarn release` in the project root locally.
+2. Follow the prompts to create a changeset, and include it in a PR.
 3. Merge the PR.
 4. The changesets bot will create a new 'release' PR. Merging that will release the project to NPM.
 

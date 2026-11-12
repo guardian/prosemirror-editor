@@ -1,5 +1,11 @@
 # @guardian/prosemirror-editor
 
+## 0.3.1
+
+### Patch Changes
+
+- 4117a87: Pull in patched version of prosemirror-view
+
 ## 0.3.0
 
 ### Minor Changes

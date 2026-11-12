@@ -1,21 +1,3 @@
-<!--
-
-If this PR should trigger a release, make sure your title is prefixed with one of these:
-
-- fix: (patch release)
-- feat: (minor release)
-
-These can be used but will not trigger a release:
-
-build: | chore: | ci: | docs: | style: | refactor: | perf: | test:
-
-To trigger a major release, add ! to the prefix. Any prefix can do this, e.g.:
-
-- refactor!: drop support for Node 6
-- fix!: remove old conflicting method
-
--->
-
 ## What does this change?
 <!-- A PR should have enough detail to be understandable far in the future. e.g what is the problem/why is the change needed, how does it solve it and any questions or points of discussion. Prefer copying information from a Trello card over linking to it; the card may not always exist and reviewers may not have access to the board. -->
 
